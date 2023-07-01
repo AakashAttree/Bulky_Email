@@ -1,0 +1,31 @@
+<ng-container [formGroup]="form">
+  <div class="row" formArrayName="schedules">
+    <ng-container *ngFor="let scheduleItem of getSchedule(); index as idx">
+      <ng-container formGroupName="{{idx}}">
+        <div class="col">
+
+          <div class="row">
+            <div class="col">
+              Select Date
+            </div>
+            <div class="col">
+              <input type="date" formControlName="date">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+                &nbsp;
+            </div>
+        </div>
+          <div class="row">
+            <div class="col">
+              <app-time [formGroup]="getFormGroup(scheduleItem)"></app-time>
+            </div>
+          </div>
+        </div>
+       
+       
+      </ng-container>
+    </ng-container>
+  </div>
+</ng-container>

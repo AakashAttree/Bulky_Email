@@ -1,0 +1,75 @@
+<div class="row">
+  <div class="col">
+    <div class="row">
+      <div class="col">
+        <mat-form-field appearance="standard">
+          <mat-label>Filter</mat-label>
+          <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Mia" #input>
+        </mat-form-field>
+        
+        <div class="mat-elevation-z8">
+          <table mat-table [dataSource]="dataSource" matSort>
+        
+            <!-- ID Column -->
+            <ng-container matColumnDef="id">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> ID </th>
+              <td mat-cell *matCellDef="let row"> {{row.id}} </td>
+            </ng-container>
+        
+            <!-- Progress Column -->
+            <ng-container matColumnDef="emailname">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> Email name </th>
+              <td mat-cell *matCellDef="let row"> {{row.emailname}}</td>
+            </ng-container>
+        
+            <!-- Name Column -->
+            <ng-container matColumnDef="emailsubject">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> Subject </th>
+              <td mat-cell *matCellDef="let row"> {{row.emailsubject}} </td>
+            </ng-container>
+        
+            <!-- Fruit Column -->
+            <ng-container matColumnDef="scheduled">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> Scheduled </th>
+              <td mat-cell *matCellDef="let row"> {{row.scheduled}} </td>
+            </ng-container>
+      
+            <ng-container matColumnDef="contactsCount">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> Contacts Count </th>
+              <td mat-cell *matCellDef="let row"> {{row.contactsCount}} </td>
+            </ng-container>
+      
+            <ng-container matColumnDef="modify">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> To edit email </th>
+              <td mat-cell *matCellDef="let row"> 
+                
+                <button name="editbutton" (click)="openEdit(row.id)">Edit</button>
+              </td>
+            </ng-container>
+        
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        
+            <!-- Row shown when there is no matching data. -->
+            <tr class="mat-row" *matNoDataRow>
+              <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
+            </tr>
+          </table>
+        
+          <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page of users"></mat-paginator>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          &nbsp;
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <button name="addbutton" (click)="openEmail()">Add New</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+ 

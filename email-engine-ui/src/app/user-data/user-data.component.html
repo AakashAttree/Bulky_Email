@@ -1,0 +1,14 @@
+<div class="row">
+    <div class="col">
+        <label>Select file: </label>
+    </div>
+    <div class="col">
+        <input type="file" accept=".xlsx" (change)="changeFile($event)"> 
+    </div>
+
+</div>
+<div class="row">
+    <div class="col">
+        <button (click)="saveData()">Save</button>
+    </div>
+</div>

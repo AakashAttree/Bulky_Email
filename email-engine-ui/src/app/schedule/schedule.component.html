@@ -1,0 +1,82 @@
+<ng-container [formGroup]="scheduleForm">
+<div class="row">
+    <div class="col">
+        <div class="row">
+            <div class="col">
+                Job Name
+            </div>
+            <div class="col">
+                <input type="text" name="name" formControlName="name">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                &nbsp;
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <label for="mode">Mode</label>
+            </div>
+            <div class="col">
+                <div class="form-check form-check-inline">
+                    <label class="form-check-label" >
+                        <input class="form-check-input" type="radio" name="mode" id="once" value="once" formControlName="mode"> Once
+                    </label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <label class="form-check-label">
+                        <input class="form-check-input" type="radio" name="mode" id="daily" value="daily"  formControlName="mode"> Daily
+                    </label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <label class="form-check-label">
+                        <input class="form-check-input" type="radio" name="mode" id="once" value="weekly"  formControlName="mode"> Weekly
+                    </label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <label class="form-check-label">
+                        <input class="form-check-input" type="radio" name="mode" id="once" value="monthly"  formControlName="mode"> Monthly
+                    </label>
+                </div>
+            </div>
+        </div>
+        <div class="row" *ngIf="scheduleForm.controls.mode.value == 'once'">
+            <div class="col"></div>
+            <div class="col">
+                <app-once-options></app-once-options>
+            </div>
+        </div>
+        <div class="row"  *ngIf="scheduleForm.controls.mode.value == 'daily'">
+            <div class="col"></div>
+            <div class="col">
+                <app-daily-options></app-daily-options>
+            </div>
+        </div>
+        <div class="row" *ngIf="scheduleForm.controls.mode.value == 'weekly'">
+            <div class="col"></div>
+            <div class="col">
+                <app-weekly-options></app-weekly-options>
+                
+            </div>
+        </div>
+        <div class="row"  *ngIf="scheduleForm.controls.mode.value == 'monthly'">
+            <div class="col"></div>
+            <div class="col">
+              
+                <app-monthly-options></app-monthly-options>
+            </div>
+        </div>
+    </div>
+</div>
+</ng-container>
+<div class="row">
+    <div class="col">
+        &nbsp;
+    </div>
+</div>
+<div class="row">
+    <div class="col" style="text-align: center">
+        <button (click)="onNextStep()">Save & Next</button>
+    </div>
+</div>

@@ -1,0 +1,52 @@
+<ng-container [formGroup]="form">
+    <div class="row" formArrayName="schedules">
+        <ng-container *ngFor="let scheduleItem of getSchedule(); index as idx">
+            <ng-container formGroupName="{{idx}}">
+                <div class="col">
+                    <div class="row">
+                        <div class="col">
+                            <mat-form-field appearance="fill">
+                                <mat-label>Month</mat-label>
+                                <mat-select formControlName="month">
+                                    <mat-select-trigger>
+                                        {{toppings.value?.[0] || ''}}
+                                        <span *ngIf="(toppings.value?.length || 0) > 1"
+                                            class="example-additional-selection">
+                                            (+{{(toppings.value?.length || 0) - 1}} {{toppings.value?.length === 2 ?
+                                            'other' : 'others'}})
+                                        </span>
+                                    </mat-select-trigger>
+                                    <mat-option *ngFor="let topping of months; index as idx" [value]="idx+1">{{topping}}
+                                    </mat-option>
+                                </mat-select>
+                            </mat-form-field>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <mat-form-field appearance="fill">
+                                <mat-label>Date</mat-label>
+                                <mat-select formControlName="dayOfMonth">
+                                    <mat-select-trigger>
+                                        {{toppings.value?.[0] || ''}}
+                                        <span *ngIf="(toppings.value?.length || 0) > 1"
+                                            class="example-additional-selection">
+                                            (+{{(toppings.value?.length || 0) - 1}} {{toppings.value?.length === 2 ?
+                                            'other' : 'others'}})
+                                        </span>
+                                    </mat-select-trigger>
+                                    <mat-option *ngFor="let topping of dates" [value]="topping">{{topping}}</mat-option>
+                                </mat-select>
+                            </mat-form-field>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <app-time  [formGroup]="getFormGroup(scheduleItem)"></app-time>
+                        </div>
+                    </div>
+                </div>
+            </ng-container>
+        </ng-container>
+    </div>
+</ng-container>

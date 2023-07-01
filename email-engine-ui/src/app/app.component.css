@@ -1,0 +1,53 @@
+*
+{
+    
+    box-sizing: border-box;
+}
+/* body
+{
+    background-image: url(2.webp);
+    background-size: cover;
+    background-position: center;
+    box-sizing: border-box;
+    font-family: sans-serif;
+} */
+.menu-bar
+{
+    text-align: start;
+    
+}
+
+.menu-bar ul
+{
+    display: inline-flex;
+    list-style: none;
+    color: black;
+}
+.menu-bar ul li
+{
+    width: 120px;
+    margin: 15px;
+    padding: 15px;
+
+}
+.menu-bar ul li a
+{
+    text-decoration: none;
+    color: black;
+}
+.active, .menu-bar ul li:hover
+{
+    background: #f1f3f1;
+    border-radius: 3px;
+}
+.menu-bar .fa
+{
+    margin-right: 8px;
+}
+.sub-menu-1
+{
+    display: none;
+    
+}
+
+
