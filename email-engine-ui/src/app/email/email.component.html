@@ -1,0 +1,39 @@
+<div class="row" [formGroup]="emailFormGroup">
+    <div class="col">
+        <div class="row">
+            <div class="col">
+                <label>Email name</label>
+            </div>
+            <div class="col">
+                <input type="text" name="emailname" formControlName="emailname" value="{{email.emailname}}">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <label>Email Subject</label>
+            </div>
+            <div class="col">
+                <input type="text" name="emailsubject" formControlName="emailsubject" value="{{email.emailsubject}}">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <label>Email Body</label>
+            </div>
+            <div class="col">
+                <textarea name="emailbody" id="" cols="30" rows="10" formControlName="emailbody"  value="{{email.emailbody}}"></textarea>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                &nbsp;
+            </div>
+        </div>
+        <div class="row">
+            <div class="col" style="text-align: center;">
+                <button name="save" (click)="onNextStep()">Save & Next</button>
+            </div>
+        </div>
+    </div>
+
+</div>

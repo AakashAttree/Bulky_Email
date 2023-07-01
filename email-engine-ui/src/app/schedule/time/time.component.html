@@ -1,0 +1,45 @@
+<ng-container [formGroup]="formGroup">
+    <ng-container formGroupName="time">
+        <div class="row">
+            <div class="col">
+                <div class="row">
+                    <div class="col">
+                        Hour
+                    </div>
+                    <div class="col">
+                        <input type="number" min="0" max="23" name="hour" formControlName="hour">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        &nbsp;
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        Minute
+                    </div>
+                    <div class="col">
+                        <input type="number" min="0" max="59" name="minuts" formControlName="minute">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        &nbsp;
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        Second
+                    </div>
+                    <div class="col">
+                        <input type="number" min="0" max="59" name="seconds" formControlName="second">
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        
+        
+    </ng-container>
+</ng-container>
